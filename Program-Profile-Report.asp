@@ -146,7 +146,7 @@
 		Else
 		
 		If Instr(satac_code, ",") > 0 Then
-			Response.write("<h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & right(ppc,4) & "</span>&nbsp;/&nbsp;SATAC : <span>" & satac_code1 & "</span></h3>")
+			Response.write("<h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & right(ppc,4) & "</span>&nbsp;/&nbsp;SATAC : <span>" & satac_code1 & "&nbsp;(Internal Offering)</span></h3>")
 		Else
 				Response.write("<h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & right(ppc,4) & "</span>&nbsp;/&nbsp;SATAC : <span>" & satac_code & "</span></h3>") 
 		End If
@@ -223,7 +223,7 @@
 					
 					rs.Open sql, conn
 					
-					Response.write("<br><h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & right(ppc,4) & "</span>&nbsp;/&nbsp;SATAC : <span>" & satac_code2 & "</span></h3><br>")
+					Response.write("<br><h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & right(ppc,4) & "</span>&nbsp;/&nbsp;SATAC : <span>" & satac_code2 & "&nbsp;(External Offering)</span></h3><br>")
 					%>
 
 			<table class="pure-table  pure-table-bordered equalDivide" width="100%">
