@@ -1,0 +1,32 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+  padding: 1em;
+}
+span { color: #333; }
+.pure-table td, .pure-table th { vertical-align: top !important; }
+.equalDivide tr td { width:33.33%; }
+.success { color: #4BB543; text-weight: bolder; font-size: small; }
+.error { color: #d43f3a; text-weight: bolder; }
+h1 { font-size: 1.6em; }
+h1, .programName { text-transform: uppercase; text-align: left; }
+
+.heading {
+  display: block;
+  margin: 0 auto;
+  padding: 2px;
+  text-align: center;
+}
+.Pagedivider {
+  clear: both;
+  display: block;
+  border :1px solid transparent;
+  page-break-after: always;
+}
+
+blockquote { font-size: .77rem; }
+ul li { list-style: none; }
+    
+
+    
+
