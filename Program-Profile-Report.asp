@@ -3,9 +3,7 @@
 
 	<div class="logo">
 		<img src="uni-logo.jpg" class="heading">
-	
 		<h1 class="heading">ADMISSIONS INFORMATION SET</h1>
-	
 	</div>
 
 	<%
@@ -138,10 +136,7 @@
 					End If
 					
 					rs.Open sql, conn
-					
-			%>
-		<!-- check we have data-->
-		<% 
+	
 		If (rs.EOF) Then 
 			Response.Write("<h4 class=""error"">No SATAC Code for this Program Code : ''" & ppc & "''</h4>")
 		Else
@@ -225,8 +220,7 @@
 					rs.Open sql, conn
 					If Not rs.eof Then
 						Response.write("<br><h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & progCode & "</span>&nbsp;/&nbsp;SATAC : <span>" & satac_code2 & "</span></h3><br>")
-					
-					%>
+			%>
 
 			<table class="pure-table  pure-table-bordered equalDivide" width="100%">
 				<thead>
@@ -284,11 +278,8 @@
 				loop %>
 			</table>
 			<%	
-			End If 
-			End If 
-			%>
-			
-			<%	
+					End If 
+				End If 
 			End If 
 			%>
 	    
