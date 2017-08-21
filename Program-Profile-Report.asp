@@ -16,21 +16,21 @@
 			ppc = Request.QueryString("ppc")
 
 			set rs = Server.CreateObject("ADODB.recordset")
-			sql = " SELECT * from ProgramProfileUltimate WHERE ProgramPlanCode = '" & ppc & "' ORDER BY ApplicantBackground"
+			sql = " SELECT * from ProgramProfile WHERE ProgramPlanCode = '" & ppc & "' ORDER BY FINAL_GROUPING"
 			rs.Open sql, conn
 			
 			satac_code = rs.Fields("SATACCode")
 			
-			Dim metatitle, metaDesc
+			Dim metatitle, metaDesc, progCode
 			metatitle = "<title>" & ppc & "</title>"
 			metaDesc = "<meta name=""description"" content=""" & ppc & """ />"
+			progCode = rs.Fields("ProgCode")
 
-			
 	If (rs.EOF) Then 
 		Response.Write("<h4 class=""error"">Errors - Query returned no results for Program Plan Code : ''" & ppc & "''</h4>")
 	Else			
 
-	Response.write("<h3 class=""programName heading""> Program Name : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & right(ppc,4) & "</span></h3>") %>		
+	Response.write("<h3 class=""programName heading""> Program Name : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & progCode & "</span></h3>") %>		
 
 <head>
 	<%= metatitle %>
@@ -52,6 +52,7 @@
 			<li>L/N - low numbers: the numbers of students is less than 5</li>
 			<li>N/A - data not available for this item</li>
 			<li>N/P - Not published: the number is hidden to prevent calculation if number in cells with less than 5.</li>
+			<li>Group C: UniSA does not admit students where both ATAR and additional criteria are considered. Therefore this Group C subgroup has been omitted from the tables.</li>
 		</ul>
 		</blockquote>
 				
@@ -63,7 +64,7 @@
 			    <th>Percentage of all Students</th>
 			  </tr>
 			</thead>
-
+			  				
 				<% do until rs.EOF 
 				
 					finalGroupingA = rs.Fields("ApplicantBackground")
@@ -86,7 +87,7 @@
 						Response.Write("<td>" & rs.Fields("NumberOfStudents")) & "</td>"
 						Response.Write("<td>" & rs.Fields("PercentageOfAllStudents")) & "%</td></tr>"
 					End If 
-					
+
 					finalGroupingD = rs.Fields("ApplicantBackground")
 					if Left(finalGroupingD, 3) = "(D)" Then
 						Response.Write("<tr><td>" & rs.Fields("ApplicantBackground")) & "</td>"
@@ -107,7 +108,7 @@
 						Response.Write("<td>" & rs.Fields("NumberOfStudents")) & "</td>"
 						Response.Write("<td>" & rs.Fields("PercentageOfAllStudents")) & "%</td></tr>"
 					End If 
-				
+					
 				rs.MoveNext 
 				loop %>
 			</table>
@@ -130,10 +131,10 @@
 						Dim splitmystring : splitmystring = split(satac_code,",")
 						satac_code1 = splitmystring(0)
 						satac_code2 = splitmystring(1)
-						sql = "SELECT * from ATARUltimate WHERE SATAC_CODE = '" & satac_code1 & "' ORDER BY SRT"
-						sql2 = "SELECT * from ATARUltimate WHERE SATAC_CODE = '" & satac_code2 & "' ORDER BY SRT"
+						sql = "SELECT * from ATAR WHERE SATAC_CODE = '" & satac_code1 & "' ORDER BY SRT"
+						sql2 = "SELECT * from ATAR WHERE SATAC_CODE = '" & satac_code2 & "' ORDER BY SRT"
 					Else
-						sql = "SELECT * from ATARUltimate WHERE SATAC_CODE = '" & satac_code & "' ORDER BY SRT"
+						sql = "SELECT * from ATAR WHERE SATAC_CODE = '" & satac_code & "' ORDER BY SRT"
 					End If
 					
 					rs.Open sql, conn
@@ -146,14 +147,14 @@
 		Else
 		
 		If Instr(satac_code, ",") > 0 Then
-			Response.write("<h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & right(ppc,4) & "</span>&nbsp;/&nbsp;SATAC : <span>" & satac_code1 & "&nbsp;(Internal Offering)</span></h3>")
+			Response.write("<h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & progCode & "</span>&nbsp;/&nbsp;SATAC : <span>" & satac_code1 & "</span></h3>")
 		Else
-				Response.write("<h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & right(ppc,4) & "</span>&nbsp;/&nbsp;SATAC : <span>" & satac_code & "</span></h3>") 
+				Response.write("<h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & progCode & "</span>&nbsp;/&nbsp;SATAC : <span>" & satac_code & "</span></h3>") 
 		End If
 		%>
 		
 		<blockquote>
-			The table below relates to all applicants whose admission is based mostly on secondary education undertaken within the previous two years, and who were selected on the basis of their ATAR alone. The table includes ATAR (excluding and adjustment factors) and Selection Rank (ATAR plus any adjustment factors). 
+			The table below relates to all applicants whose admission is based mostly on secondary education undertaken within the previous two years, and who were selected on the basis of their ATAR alone. The table includes ATAR (excluding any adjustment factors) and Selection Rank (ATAR plus any adjustment factors). 
 				<ul><b>Note:</b>
 					<li>*L/N - indicates low numbers if less than 5 ATAR-based offers made</li>
 					<li>#N/P - indicates figure is not published if less than 25 ATAR-based offers made</li>
@@ -219,11 +220,12 @@
 			<%
 					If Instr(satac_code, ",") > 0 Then
 					set rs = Server.CreateObject("ADODB.recordset")
-					sql = "SELECT * from ATARUltimate WHERE SATAC_CODE = '" & satac_code2 & "' ORDER BY SRT"
+					sql = "SELECT * from ATAR WHERE SATAC_CODE = '" & satac_code2 & "' ORDER BY SRT"
 					
 					rs.Open sql, conn
+					If Not rs.eof Then
+						Response.write("<br><h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & progCode & "</span>&nbsp;/&nbsp;SATAC : <span>" & satac_code2 & "</span></h3><br>")
 					
-					Response.write("<br><h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & right(ppc,4) & "</span>&nbsp;/&nbsp;SATAC : <span>" & satac_code2 & "&nbsp;(External Offering)</span></h3><br>")
 					%>
 
 			<table class="pure-table  pure-table-bordered equalDivide" width="100%">
@@ -282,6 +284,7 @@
 				loop %>
 			</table>
 			<%	
+			End If 
 			End If 
 			%>
 			

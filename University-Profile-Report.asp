@@ -21,13 +21,13 @@
 
 <body>
 
-	<blockquote>The admissions information set for each degree outlines a collection of information that will help you to gauge and compare study options, course admission criteria and your likely student peer cohort across multiple courses and admission options.<br>
-		<br><b>University of South Australia student profile</b><br> The table below gives an indication of the likely peer cohort for new students at UniSA. It provides data of students who commenced undergraduate study in the most recent intake period across all degrees. 
+	<blockquote>The admissions information is a collection of information that will help you to gauge and compare study options, course admission criteria and your likely student peer cohort across multiple courses and admission options.<br><br>Admission information sets for individual degrees are available via degree pages.<br><br><b>University of South Australia student profile</b><br> The table below gives an indication of the likely peer cohort for new students at UniSA. It provides data of students who commenced undergraduate study in the most recent intake period across all degrees. 
 		<ul>
 			<b>Note:</b>
 			<li>L/N - low numbers: the numbers of students is less than 5</li>
 			<li>N/A - data not available for this item</li>
 			<li>N/P - Not published: the number is hidden to prevent calculation if number in cells with less than 5.</li>
+			<li>Group C: UniSA does not admit students where both ATAR and additional criteria are considered. Therefore this Group C subgroup has been omitted from the tables.</li>
 		</ul>
 	</blockquote>
 
@@ -43,37 +43,37 @@
 		<tbody>
 			<tr>
 				<td>(A) Past higher education study</td>
-				<td>2421</td>
-				<td>31.83</td>
+				<td>2412</td>
+				<td>31.75%</td>
 			</tr>
 			<tr>
 				<td>(B) Past vocational education and training (VET) study</td>
 				<td>662</td>
-				<td>8.7</td>
+				<td>8.71%</td>
 			</tr>
 			<tr>
 				<td>(C) Recent secondary education - Admitted solely on the basis of ATAR</td>
 				<td>2545</td>
-				<td>33.46</td>
+				<td>33.5%</td>
 			</tr>
 			<tr>
 				<td>(C) Recent secondary education - Admitted solely on the basis of other criteria</td>
 				<td>693</td>
-				<td>9.11</td>
+				<td>9.12%</td>
 			</tr>
 			<tr>
 				<td>(D) Work and life experience</td>
 				<td>372</td>
-				<td>4.89</td>
+				<td>4.9%</td>
 			</tr>
 			<tr>
 				<td>International students</td>
 				<td>914</td>
-				<td>12.02</td>
+				<td>12.03%</td>
 			</tr>
 			<tr>
 				<td>All Students</td>
-				<td>7607</td>
+				<td>7598</td>
 				<td>100%</td>
 			</tr>
 		</tbody>
