@@ -69,42 +69,72 @@
 					if Left(finalGroupingA, 3) = "(A)" Then
 						Response.Write("<tr><td>" & rs.Fields("ApplicantBackground")) & "</td>"
 						Response.Write("<td>" & rs.Fields("NumberOfStudents")) & "</td>"
-						Response.Write("<td>" & rs.Fields("PercentageOfAllStudents")) & "%</td></tr>"
+						Response.Write("<td>" & rs.Fields("PercentageOfAllStudents")) 
+						if rs.Fields("PercentageOfAllStudents") = "N/P" Then
+							Response.Write("</td></tr>")
+						Else
+							Response.Write("%</td></tr>")
+						End If
 					End If 
 
 					finalGroupingB = rs.Fields("ApplicantBackground")
 					if Left(finalGroupingB, 3) = "(B)" Then
 						Response.Write("<tr><td>" & rs.Fields("ApplicantBackground")) & "</td>"
 						Response.Write("<td>" & rs.Fields("NumberOfStudents")) & "</td>"
-						Response.Write("<td>" & rs.Fields("PercentageOfAllStudents")) & "%</td></tr>"
+						Response.Write("<td>" & rs.Fields("PercentageOfAllStudents"))
+						if rs.Fields("PercentageOfAllStudents") = "N/P" Then
+							Response.Write("</td></tr>")
+						Else
+							Response.Write("%</td></tr>")
+						End If
 					End If 
 				
 					finalGroupingC = rs.Fields("ApplicantBackground")
 					if Left(finalGroupingC, 3) = "(C)" Then
 						Response.Write("<tr><td>" & rs.Fields("ApplicantBackground")) & "</td>"
 						Response.Write("<td>" & rs.Fields("NumberOfStudents")) & "</td>"
-						Response.Write("<td>" & rs.Fields("PercentageOfAllStudents")) & "%</td></tr>"
+						Response.Write("<td>" & rs.Fields("PercentageOfAllStudents"))
+						if rs.Fields("PercentageOfAllStudents") = "N/P" Then
+							Response.Write("</td></tr>")
+						Else
+							Response.Write("%</td></tr>")
+						End If
 					End If 
 
 					finalGroupingD = rs.Fields("ApplicantBackground")
 					if Left(finalGroupingD, 3) = "(D)" Then
 						Response.Write("<tr><td>" & rs.Fields("ApplicantBackground")) & "</td>"
 						Response.Write("<td>" & rs.Fields("NumberOfStudents")) & "</td>"
-						Response.Write("<td>" & rs.Fields("PercentageOfAllStudents")) & "%</td></tr>"
+						Response.Write("<td>" & rs.Fields("PercentageOfAllStudents"))
+						if rs.Fields("PercentageOfAllStudents") = "N/P" Then
+							Response.Write("</td></tr>")
+						Else
+							Response.Write("%</td></tr>")
+						End If
 					End If 
 					
 					finalGroupingE = rs.Fields("ApplicantBackground")
 					if Left(finalGroupingE, 3) = "Int" Then
 						Response.Write("<tr><td>" & rs.Fields("ApplicantBackground")) & "</td>"
 						Response.Write("<td>" & rs.Fields("NumberOfStudents")) & "</td>"
-						Response.Write("<td>" & rs.Fields("PercentageOfAllStudents")) & "%</td></tr>"
+						Response.Write("<td>" & rs.Fields("PercentageOfAllStudents"))
+						if rs.Fields("PercentageOfAllStudents") = "N/P" Then
+							Response.Write("</td></tr>")
+						Else
+							Response.Write("%</td></tr>")
+						End If
 					End If 
 					
 					finalGroupingF = rs.Fields("ApplicantBackground")
 					if Left(finalGroupingF, 3) = "All" Then
 						Response.Write("<tr><td>" & rs.Fields("ApplicantBackground")) & "</td>"
 						Response.Write("<td>" & rs.Fields("NumberOfStudents")) & "</td>"
-						Response.Write("<td>" & rs.Fields("PercentageOfAllStudents")) & "%</td></tr>"
+						Response.Write("<td>" & rs.Fields("PercentageOfAllStudents"))
+						if rs.Fields("PercentageOfAllStudents") = "N/P" Then
+							Response.Write("</td></tr>")
+						Else
+							Response.Write("%</td></tr>")
+						End If
 					End If 
 					
 				rs.MoveNext 
@@ -138,7 +168,7 @@
 					rs.Open sql, conn
 	
 		If (rs.EOF) Then 
-			Response.Write("<h4 class=""error"">No SATAC Code for this Program Code : ''" & ppc & "''</h4>")
+			Response.Write("<h4 class=""error"">This program is not offered via SATAC, therefore does not have a SATAC Code or ATAR Profile</h4>")
 		Else
 		
 		If Instr(satac_code, ",") > 0 Then
