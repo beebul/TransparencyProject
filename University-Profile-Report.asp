@@ -21,7 +21,7 @@
 
 <body>
 
-	<blockquote>The admissions information is a collection of information that will help you to gauge and compare study options, course admission criteria and your likely student peer cohort across multiple courses and admission options.<br><br>Admission information sets for individual degrees are available via degree pages.<br><br><b>University of South Australia student profile</b><br> The table below gives an indication of the likely peer cohort for new students at UniSA. It provides data of students who commenced undergraduate study in the most recent intake period across all degrees. 
+	<blockquote>The admissions information is a collection of information that will help you to gauge and compare study options, course admission criteria and your likely student peer cohort across multiple courses and admission options.<br><br>Admission information sets for individual degrees are available via degree pages.<br><br><b>University of South Australia student profile</b><br> The table below gives an indication of the likely peer cohort for new students at UniSA. It provides data of students who commenced undergraduate study in the most recent intake period across all degrees.
 		<ul>
 			<b>Note:</b>
 			<li>L/N - low numbers: the numbers of students is less than 5</li>
@@ -43,8 +43,8 @@
 		<tbody>
 			<tr>
 				<td>(A) Past higher education study</td>
-				<td>2412</td>
-				<td>31.75%</td>
+				<td>2411</td>
+				<td>31.73%</td>
 			</tr>
 			<tr>
 				<td>(B) Past vocational education and training (VET) study</td>
@@ -58,8 +58,8 @@
 			</tr>
 			<tr>
 				<td>(C) Recent secondary education - Admitted solely on the basis of other criteria</td>
-				<td>693</td>
-				<td>9.12%</td>
+				<td>694</td>
+				<td>9.13%</td>
 			</tr>
 			<tr>
 				<td>(D) Work and life experience</td>
