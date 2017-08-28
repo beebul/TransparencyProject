@@ -1,5 +1,6 @@
 body {
-  font-family: "Open Sans", sans-serif;
+  /*font-family: "Open Sans", sans-serif;*/
+  font-family: 'Montserrat', sans-serif;
   line-height: 1.25;
   padding: 1em;
 }
@@ -26,7 +27,3 @@ h1, .programName { text-transform: uppercase; text-align: left; }
 
 blockquote { font-size: .77rem; }
 ul li { list-style: none; }
-    
-
-    
-

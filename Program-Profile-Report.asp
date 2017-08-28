@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
 	<div class="logo">
 		<img src="uni-logo.jpg" class="heading">
@@ -29,7 +30,7 @@
 		Response.Write("<h4 class=""error"">Errors - Query returned no results for Program Plan Code : ''" & ppc & "''</h4>")
 	Else
 
-	Response.write("<h3 class=""programName heading""> Program Name : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & progCode & "</span></h3>") %>
+	Response.write("<h3 class=""programName heading""> Program Name : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & progCode & "</span></h3>	<br>") %>
 
 <head>
 	<%= metatitle %>
@@ -43,7 +44,7 @@
 
 <body>
 
-		<blockquote>The admissions information set for each degree outlines a collection of information that will help you to gauge and compare study options, course admission criteria and your likely student peer cohort across multiple courses and admission options.Each admissions information set at the degree level will include a student profile for the degree and, for most degrees, an ATAR profile. An ATAR profile will not be available where there were no applicants in the secondary education applicant group who were admitted solely on the basis of their ATAR for that degree.<br>
+		<blockquote>The admissions information set for each degree outlines a collection of information that will help you to gauge and compare study options, course admission criteria and your likely student peer cohort across multiple courses and admission options. Each admissions information set at the degree level will include a student profile for the degree and, for most degrees, an ATAR profile. An ATAR profile will not be available where there were no applicants in the secondary education applicant group who were admitted solely on the basis of their ATAR for that degree.<br>
 		<br><b>Student profile</b><br>
 		The table below gives an indication of the likely peer cohort for new students at UniSA. It provides data of students who commenced undergraduate study in the most recent intake period.
 		<ul>
@@ -53,7 +54,8 @@
 			<li>N/P - Not published: the number is hidden to prevent calculation if number in cells with less than 5.</li>
 			<li>Group C: UniSA does not admit students where both ATAR and additional criteria are considered. Therefore this Group C subgroup has been omitted from the table.</li>
 		</ul>
-		</blockquote>
+	</blockquote>
+	<br>
 
 			<table class="pure-table pure-table-bordered" width="100%">
 				<thead>
@@ -144,16 +146,7 @@
 
 			<%
 			End If
-			%>
 
-			<div class="Pagedivider">&nbsp;</div>
-
-			<div class="logo">
-				<img src="uni-logo.jpg" class="heading">
-				<h1 class="heading">ATAR Profile</h1>
-			</div>
-
-			<%
 					set rs = Server.CreateObject("ADODB.recordset")
 
 					 If Instr(satac_code, ",") > 0 Then
@@ -168,10 +161,18 @@
 
 					rs.Open sql, conn
 
-		If (rs.EOF) Then
-			Response.Write("<h4 class=""error"">This program is not offered via SATAC, therefore does not have a SATAC Code or ATAR Profile</h4>")
-		Else
+		If not (rs.EOF) Then
 
+		%>
+			<div class="Pagedivider">&nbsp;</div>
+
+			<div class="logo">
+				<img src="uni-logo.jpg" class="heading">
+				<h1 class="heading">ATAR Profile</h1>
+			</div>
+
+
+		<%
 		If Instr(satac_code, ",") > 0 Then
 			Response.write("<h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & progCode & "</span>&nbsp;/&nbsp;SATAC : <span>" & satac_code1 & "</span></h3>")
 		Else
