@@ -16,6 +16,7 @@
 	<!-- metaDesc -->
 	<meta name="robots" content="all">
 	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+	<!-- <link href="//fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> -->
 	<link rel="stylesheet" type="text/css" href="transparency.css">
 </head>
 
@@ -30,6 +31,7 @@
 			<li>Group C: UniSA does not admit students where both ATAR and additional criteria are considered. Therefore this Group C subgroup has been omitted from the tables.</li>
 		</ul>
 	</blockquote>
+	<br>
 
 	<table class="pure-table pure-table-bordered" width="100%">
 		<thead>

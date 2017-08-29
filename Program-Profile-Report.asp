@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
 	<div class="logo">
 		<img src="uni-logo.jpg" class="heading">
@@ -26,11 +25,28 @@
 			metaDesc = "<meta name=""description"" content=""" & ppc & """ />"
 			progCode = rs.Fields("ProgCode")
 
+			Function expandOT(offeringCode)
+				Select Case offeringCode
+	  			Case "I"
+	    			expandOT = "Internal Offering"
+	  			Case "P"
+	    			expandOT = "Packaged Offering"
+	  			Case "E"
+	    			expandOT = "External Offering"
+				End Select
+			End Function
+
 	If (rs.EOF) Then
 		Response.Write("<h4 class=""error"">Errors - Query returned no results for Program Plan Code : ''" & ppc & "''</h4>")
 	Else
 
-	Response.write("<h3 class=""programName heading""> Program Name : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & progCode & "</span></h3>	<br>") %>
+	Response.write("<h3 class=""programName heading""> Program Name : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & progCode & "</span></h3>	<br>")
+  If (rs.Fields("Offering") <> "") Then
+		offeringType = Trim(rs.Fields("Offering"))
+		fullOfferingType= expandOT(offeringType)
+		Response.Write("<h3 class=""programName heading"" style=""margin-top: -1em;"">" & fullOfferingType &  " / SATAC CODE: " & satac_code & "</h3>")
+	End If
+	%>
 
 <head>
 	<%= metatitle %>
@@ -39,6 +55,7 @@
 	<%= metaDesc %>
 	<meta name="robots" content="all">
 	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+	<!-- <link href="//fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> -->
 	<link rel="stylesheet" type="text/css" href="transparency.css">
 </head>
 
