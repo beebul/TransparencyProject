@@ -27,6 +27,9 @@ h1, .programName { text-transform: uppercase; text-align: left; }
 blockquote { font-size: .77rem; }
 ul li { list-style: none; }
 
+
+/* wkhtmltopdf likes to have fonts encoded as base64 just for fun */
+
 @font-face {
     font-family: 'Montserrat';
     /*font-style: normal;*/
