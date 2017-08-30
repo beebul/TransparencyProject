@@ -9,8 +9,7 @@
 	<%
 			Dim conn
 			Set conn = Server.CreateObject("ADODB.Connection")
-			''conn.Open "Provider=SQLOLEDB;Data Source=.\SQLEXPRESS;Initial Catalog=transparency;User Id=sa;Password=KLF-chill-out-1990"
-			conn.Open "Provider=SQLOLEDB;Data Source=.\SQLEXPRESS;Initial Catalog=transparency;User Id=sa;Password=Homerjones1"
+			conn.Open "Provider=SQLOLEDB;Data Source=.\SQLEXPRESS;Initial Catalog=transparency;User Id=sa;Password=KLF-chill-out-1990"
 
 			ppc = Request.QueryString("ppc")
 

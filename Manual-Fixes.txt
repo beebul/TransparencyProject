@@ -2,19 +2,19 @@
 The PDFs below have two offerings so are combined:
 -------------------------------------------------
 
-N-A-DBIC          424561 (Internal),424661 (Pathway)
-N-A-DDAR          424621 (Pathway), 426011 (Internal)
-N-A-DDBU          424631 (Pathway), 426031 (Internal)
-N-A-DDHL          426041 (Internal), 426051 (Pathway)
-N-A-DDST          424641 (Pathway), 426021 (Internal)
-N-A-LBMA          434111 (Pathway), 434661 (Internal)
-N-A-LBSC          434101 (Pathway), 434201 (Internal)
-N-A-MBME          444471 (Internal), 444531 (Pathway)
-IBHT-I,IBHT-P     414231 (Internal), 414401 (Pathway)
-DBVS-I,DBVS-P     424381 (Internal), 444511 (Pathway)
-MBAA-I,MBAA-P     444341 (Internal), 444521 (Pathway)
-IBNU-E,IBNU-I     (External and Internal)
-IBMW-E,IBMW-I     (External and Internal)
+N-A-DBIC          424561 (Internal),	424661 (Pathway)
+N-A-DDAR          426011 (Internal),	424621 (Pathway)
+N-A-DDBU          426031 (Internal),	424631 (Pathway)
+N-A-DDHL          426041 (Internal), 	426051 (Pathway)
+N-A-DDST          426021 (Internal),	424641 (Pathway)
+N-A-LBMA          434661 (Internal),	434111 (Pathway)
+N-A-LBSC          34201 (Internal),		434101 (Pathway)
+N-A-MBME          444471 (Internal), 	444531 (Pathway)
+IBHT-I,IBHT-P     414231 (Internal), 	414401 (Pathway)
+DBVS-I,DBVS-P     424381 (Internal), 	444511 (Pathway)
+MBAA-I,MBAA-P     444341 (Internal), 	444521 (Pathway)
+IBNU-I,IBNU-E     414141 (Internal), 	414145 (External)
+IBMW-I,IBMW-E     414241 (Internal),	414245 (External)
 
 Have been combined into these files:
 -----------------------------------
