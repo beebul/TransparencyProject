@@ -40,11 +40,17 @@
 		Response.Write("<h4 class=""error"">Errors - Query returned no results for Program Plan Code : ''" & ppc & "''</h4>")
 	Else
 
-	Response.write("<h3 class=""programName heading""> Program Name : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & progCode & "</span></h3>	<br>")
-  If (rs.Fields("Offering") <> "") Then
+	Response.write("<h3 class=""programName heading""> Program Name : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & progCode & "</span>")
+	If satac_code <> "" Then
+		Response.Write(" / SATAC CODE: " & satac_code)
+	End If
+
+	Response.Write("</h3>	<br>")
+
+	If (rs.Fields("Offering") <> "") Then
 		offeringType = Trim(rs.Fields("Offering"))
 		fullOfferingType= expandOT(offeringType)
-		Response.Write("<h3 class=""programName heading"" style=""margin-top: -1em;"">" & fullOfferingType &  " / SATAC CODE: " & satac_code & "</h3>")
+		Response.Write("<h3 class=""programName heading"" style=""margin-top: -1em;color:#01029A;"">" & fullOfferingType & "</h3>")
 	End If
 	%>
 
@@ -191,9 +197,9 @@
 
 		<%
 		If Instr(satac_code, ",") > 0 Then
-			Response.write("<h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & progCode & "</span>&nbsp;/&nbsp;SATAC : <span>" & satac_code1 & "</span></h3>")
+			Response.write("<h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & progCode & "</span>&nbsp;/&nbsp;SATAC Code: <span>" & satac_code1 & "</span></h3>")
 		Else
-				Response.write("<h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & progCode & "</span>&nbsp;/&nbsp;SATAC : <span>" & satac_code & "</span></h3>")
+				Response.write("<h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & progCode & "</span>&nbsp;/&nbsp;SATAC Code: <span>" & satac_code & "</span></h3>")
 		End If
 		%>
 
