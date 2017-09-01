@@ -27,7 +27,7 @@
 			<b>Note:</b>
 			<li>L/N - low numbers: the numbers of students is less than 5</li>
 			<li>N/A - data not available for this item</li>
-			<li>N/A - Not published: the number is hidden to prevent calculation of numbers in cells with less than 5 students.</li>
+			<li>N/P - Not published: the number is hidden to prevent calculation if number in cells with less than 5.</li>
 			<li>Group C: UniSA does not admit students where both ATAR and additional criteria are considered. Therefore this Group C subgroup has been omitted from the tables.</li>
 		</ul>
 	</blockquote>
@@ -45,37 +45,37 @@
 		<tbody>
 			<tr>
 				<td>(A) Past higher education study</td>
-				<td>2411</td>
-				<td>31.73%</td>
+				<td>2491</td>
+				<td>32.43%</td>
 			</tr>
 			<tr>
 				<td>(B) Past vocational education and training (VET) study</td>
-				<td>662</td>
-				<td>8.71%</td>
+				<td>663</td>
+				<td>8.63%</td>
 			</tr>
 			<tr>
 				<td>(C) Recent secondary education - Admitted solely on the basis of ATAR</td>
 				<td>2545</td>
-				<td>33.5%</td>
+				<td>33.13%</td>
 			</tr>
 			<tr>
 				<td>(C) Recent secondary education - Admitted solely on the basis of other criteria</td>
 				<td>694</td>
-				<td>9.13%</td>
+				<td>9.03%</td>
 			</tr>
 			<tr>
 				<td>(D) Work and life experience</td>
 				<td>372</td>
-				<td>4.9%</td>
+				<td>4.84%</td>
 			</tr>
 			<tr>
 				<td>International students</td>
-				<td>914</td>
-				<td>12.03%</td>
+				<td>917</td>
+				<td>11.94%</td>
 			</tr>
 			<tr>
 				<td>All Students</td>
-				<td>7598</td>
+				<td>7682</td>
 				<td>100%</td>
 			</tr>
 		</tbody>
