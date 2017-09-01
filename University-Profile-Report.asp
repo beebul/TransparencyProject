@@ -27,7 +27,7 @@
 			<b>Note:</b>
 			<li>L/N - low numbers: the numbers of students is less than 5</li>
 			<li>N/A - data not available for this item</li>
-			<li>N/A - Not published: the number is hidden to prevent calculation of numbers in cells with less than 5 students.</li>
+			<li>N/P - Not published: the number is hidden to prevent calculation of numbers in cells with less than 5 students.</li>
 			<li>Group C: UniSA does not admit students where both ATAR and additional criteria are considered. Therefore this Group C subgroup has been omitted from the tables.</li>
 		</ul>
 	</blockquote>
