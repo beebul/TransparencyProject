@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<div class="logo">
-	<img src="uni-logo.jpg" class="heading">
-
+	<img src="uni-logo.gif" class="logo heading">
 	<h1 class="heading">ADMISSIONS INFORMATION SET</h1>
 	<h2 class="heading">Whole of University</h2>
 

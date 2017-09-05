@@ -1,3 +1,12 @@
+UPDATE ProgramProfile SET Offering = 'E'
+  WHERE (ProgramPlanCode LIKE '%-e')
+
+UPDATE ProgramProfile SET Offering = 'I'
+  WHERE (ProgramPlanCode LIKE '%-i')
+
+UPDATE ProgramProfile SET Offering = 'P'
+  WHERE (ProgramPlanCode LIKE '%-P')
+
 
 The PDFs below have two offerings so are combined:
 -------------------------------------------------

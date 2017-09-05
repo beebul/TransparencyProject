@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-<div class="logo">
-    <img src="uni-logo.jpg" class="heading">
-    <h1 class="heading">ADMISSIONS INFORMATION SET</h1>
-</div>
+<img src="uni-logo.gif" class="logo heading">
+<h1 class="heading">ADMISSIONS INFORMATION SET</h1>
+
 <%
 			Dim conn
 			Set conn = Server.CreateObject("ADODB.Connection")

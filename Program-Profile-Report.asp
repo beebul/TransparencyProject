@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
 
-	<div class="logo">
-		<img src="uni-logo.jpg" class="heading">
+		<img src="uni-logo.gif" class="logo heading">
 		<h1 class="heading">ADMISSIONS INFORMATION SET</h1>
-	</div>
 
 	<%
 			Dim conn
@@ -186,19 +184,16 @@
 		If not (rs.EOF) Then
 
 		%>
-			<div class="Pagedivider">&nbsp;</div>
+			<div class="Pagedivider">&nbsp;</div><br>
 
-			<div class="logo">
-				<img src="uni-logo.jpg" class="heading">
-				<h1 class="heading">ATAR Profile</h1>
-			</div>
-
+			<img src="uni-logo.gif" class="logo heading">
+			<h1 class="heading">ATAR Profile</h1>
 
 		<%
 		If Instr(satac_code, ",") > 0 Then
-			Response.write("<h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & progCode & "</span>&nbsp;/&nbsp;SATAC Code: <span>" & satac_code1 & "</span></h3>")
+			Response.write("<h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & progCode & "</span>&nbsp;/&nbsp;SATAC Code: <span>" & satac_code1 & "</span></h3><br>")
 		Else
-				Response.write("<h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & progCode & "</span>&nbsp;/&nbsp;SATAC Code: <span>" & satac_code & "</span></h3>")
+				Response.write("<h3 class=""programName heading"">PROGRAM NAME : <span>" & rs.Fields("ProgramName") & "</span>&nbsp;/&nbsp;Program Code : <span>" & progCode & "</span>&nbsp;/&nbsp;SATAC Code: <span>" & satac_code & "</span></h3><br>")
 		End If
 		%>
 
@@ -208,7 +203,7 @@
 					<li>*L/N - indicates low numbers if less than 5 ATAR-based offers made</li>
 					<li>#N/P - indicates figure is not published if less than 25 ATAR-based offers made</li>
 				</ul>
-		</blockquote>
+		</blockquote><br>
 
 		<table class="pure-table  pure-table-bordered equalDivide" width="100%">
 			<thead>
